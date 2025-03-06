@@ -47,7 +47,7 @@ public class CompanyEmployee implements Employee {
     @Override
     public void setUuid(UUID uuid) {
         if (uuid == null) {
-            return;
+            throw new NullPointerException("UUID cannot be null");
         }
         this.uuid = uuid;
     }
