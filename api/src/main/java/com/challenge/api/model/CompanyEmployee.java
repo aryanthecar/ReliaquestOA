@@ -20,9 +20,15 @@ public class CompanyEmployee implements Employee {
     private Instant contractHireDate;
     private Instant contractTerminationDate;
 
-    public CompanyEmployee(String firstName, String lastName, String fullName,
-                           Integer salary, Integer age, String jobTitle, String email,
-                           Instant contractHireDate) {
+    public CompanyEmployee(
+            String firstName,
+            String lastName,
+            String fullName,
+            Integer salary,
+            Integer age,
+            String jobTitle,
+            String email,
+            Instant contractHireDate) {
         this.uuid = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
@@ -136,11 +142,4 @@ public class CompanyEmployee implements Employee {
     public void setContractTerminationDate(Instant date) {
         this.contractTerminationDate = date;
     }
-
-
-
-
-
-
-
 }
