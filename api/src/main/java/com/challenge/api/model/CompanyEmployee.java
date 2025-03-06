@@ -7,6 +7,8 @@ import java.util.UUID;
  * Implements employee interface
  */
 public class CompanyEmployee implements Employee {
+
+    // Declare instance variables
     private UUID uuid;
     private String firstName;
     private String lastName;
@@ -17,6 +19,20 @@ public class CompanyEmployee implements Employee {
     private String email;
     private Instant contractHireDate;
     private Instant contractTerminationDate;
+
+    public CompanyEmployee(String firstName, String lastName, String fullName,
+                           Integer salary, Integer age, String jobTitle, String email,
+                           Instant contractHireDate) {
+        this.uuid = UUID.randomUUID();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.fullName = fullName;
+        this.salary = salary;
+        this.age = age;
+        this.jobTitle = jobTitle;
+        this.email = email;
+        this.contractHireDate = contractHireDate;
+    }
 
     @Override
     public UUID getUuid() {
