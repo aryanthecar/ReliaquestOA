@@ -24,6 +24,9 @@ public class EmployeeService {
                 "John", "Doe", "John Doe", 100000, 45, "Recruiter", "johndoe@company.com", Instant.now());
         Employee e2 =
                 new CompanyEmployee("Jane", "Doe", "Jane Doe", 150000, 25, "Dev", "janedoe@company.com", Instant.now());
+
+        e1.setUuid(UUID.randomUUID());
+        e2.setUuid(UUID.randomUUID());
         employeeDatabase.put(e1.getUuid(), e1);
         employeeDatabase.put(e2.getUuid(), e2);
     }
@@ -44,9 +47,9 @@ public class EmployeeService {
 
     public Employee createEmployee(Employee employee) {
         // ensure new employee UUID is unique
-        while (employeeDatabase.containsKey(employee.getUuid())) {
+        do {
             employee.setUuid(UUID.randomUUID());
-        }
+        } while (employeeDatabase.containsKey(employee.getUuid()));
 
         // Add employee to database and return
         employeeDatabase.put(employee.getUuid(), employee);

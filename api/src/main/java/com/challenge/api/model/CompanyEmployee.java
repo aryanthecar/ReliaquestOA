@@ -29,7 +29,6 @@ public class CompanyEmployee implements Employee {
             String jobTitle,
             String email,
             Instant contractHireDate) {
-        this.uuid = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
         this.fullName = fullName;
